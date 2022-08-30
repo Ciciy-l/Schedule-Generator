@@ -1,4 +1,4 @@
-# Schedule-Generator V0.1
+# Schedule-Generator V1.4
     Generate shift schedules based on rules.
 
 ## Introduce
