@@ -1,0 +1,11 @@
+# idea相关文件
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/Schedule-Generator.iml
+/.idea/vcs.xml
+
+# 调试相关文件
+/debug.py
+/personal_information/debug
