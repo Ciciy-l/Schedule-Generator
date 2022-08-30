@@ -127,7 +127,6 @@ if __name__ == '__main__':
         month = input("请输入月份后按下enter：")
         if month not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]:
             print("输入有误！须输入正确的月份（1~12）")
-            continue
         else:
             break
     while True:
@@ -145,7 +144,6 @@ if __name__ == '__main__':
         except PermissionError:
             input("Excel文件已被其他应用占用！请关闭占用软件后按下回车键重试…")
             print("正在重试……")
-            continue
         else:
             break
     input("排班表已填写完成，按下回车键即可退出")
