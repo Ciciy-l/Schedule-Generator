@@ -11,13 +11,16 @@ import time
 
 class Schedule(object):
 
-    def __init__(self, month: int, personal_file_name: str, xlsx_file_name: str):
+    def __init__(self, month: int, personal_file_name: str, xlsx_file_name: str, skip):
         self.current_time = time.localtime()
         self.year = time.strftime("%Y", time.localtime())
         self.month = month
         self.data_path = os.path.abspath(rf"personal_information\{personal_file_name}.txt")
         self.output_xlsx_path = os.path.abspath(f"{xlsx_file_name}.xlsx")
-
+        if skip == "y":
+            self.skip_holidays = True
+        elif skip == "n":
+            self.skip_holidays = False
         self.file_exists(self.data_path)
         self.file_exists(self.output_xlsx_path)
 
@@ -93,6 +96,8 @@ class Schedule(object):
                                                                                         bold=False, color='000000')
             weekday = datetime.date(year, self.month, int(date.split("月")[-1].split("日")[0])).weekday()
             holiday = self.is_holiday(str(self.year), str(self.month).zfill(2), day)
+            if not self.skip_holidays:
+                holiday[0] = False
             if not holiday[0]:
                 if name_id == max_id:
                     name_id = -1
@@ -110,12 +115,11 @@ class Schedule(object):
             else:
                 ws.cell(row_num, 3, value="\\").font = openpyxl.styles.Font(name=u'宋体', size=10, bold=False,
                                                                             color='000000')
-        # print(fianl_row_num)
+
         if 33 - fianl_row_num > 0:
             [ws.cell(33 - num, 1, value="\\") for num in range(33 - fianl_row_num)]
             [ws.cell(33 - num, 3, value="\\") for num in range(33 - fianl_row_num)]
-            # for num in range(33 - fianl_row_num):
-            #     name_id -= 1
+
         self.update_personal_information(str(name_id + 2), current_personal_list)
         wb.save(output_xlsx_path)
         wb.close()
@@ -130,9 +134,15 @@ if __name__ == '__main__':
         else:
             break
     while True:
+        skip_holidays = input("请是否自动跳过节假日?请输入(y/n)后按下enter：")
+        if skip_holidays not in ["y", "n"]:
+            print("输入有误！须输入正确的参数（y or n）")
+        else:
+            break
+    while True:
         file = input("请输入模板excel文件名（不含拓展名）后按下enter：")
         try:
-            main_function = Schedule(int(month), personal_file_name="personal", xlsx_file_name=file)
+            main_function = Schedule(int(month), personal_file_name="personal", xlsx_file_name=file, skip=skip_holidays)
         except:
             pass
         else:
