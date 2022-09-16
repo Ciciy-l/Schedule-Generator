@@ -1,4 +1,4 @@
-# Schedule-Generator V1.6
+# Schedule-Generator V1.7
     Generate shift schedules based on rules.
 
 ## Introduce
@@ -7,7 +7,8 @@
 - Optional Whether to automatically skip holidays.
 - Customize the prefix.
 - There are two versions: command line and GUI.
-- ……
+- The configuration file controls the running mode.
+- ...
 
 ## How to operate
 
@@ -26,5 +27,5 @@
 ## The next version
 
 - Parameterized control of write cells.
-- Add a configuration file.
+- User-defined generation rules.
 - Optimized the template configuration mode.
