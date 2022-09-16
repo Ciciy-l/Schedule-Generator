@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>371</width>
-    <height>169</height>
+    <width>370</width>
+    <height>175</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>schedule.ico</normaloff>schedule.ico</iconset>
+    <normaloff>../res/schedule.ico</normaloff>../res/schedule.ico</iconset>
   </property>
   <property name="toolTip">
    <string/>
@@ -46,7 +46,7 @@
       <x>20</x>
       <y>10</y>
       <width>111</width>
-      <height>222</height>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">

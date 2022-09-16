@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(371, 169)
+        MainWindow.resize(370, 175)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("schedule.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../res/schedule.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
         self.pushButton.setCheckable(False)
         self.pushButton.setObjectName("pushButton")
         self.formLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(20, 10, 111, 222))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(20, 10, 111, 151))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
