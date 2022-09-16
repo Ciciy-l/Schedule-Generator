@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # by:Caiqiancheng
 # Date:2022/9/16
-import configparser
+
 
 from bin.Generation import generation
 from bin.Generation_ui import generation_ui

@@ -4,9 +4,9 @@ GUI运行主程序
 import sys
 
 from PyQt5 import QtWidgets
-from bin import Ui_MainWindow
 
 from src.schedule import Schedule
+from ui.main_ui import Ui_MainWindow
 
 
 class MainUi(QtWidgets.QMainWindow, Ui_MainWindow):

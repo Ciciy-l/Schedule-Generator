@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
