@@ -4,7 +4,7 @@
 
 
 from bin.Generation_cmd import generation
-from bin.Generation_ui import generation_ui
+from bin.Generation_gui import generation_ui
 from src.common import read_config
 
 
