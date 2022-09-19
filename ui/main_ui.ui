@@ -18,7 +18,8 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <selectedon>../res/schedule.png</selectedon>../res/schedule.png</iconset>
+    <selectedon>../res/schedule.png</selectedon>
+   </iconset>
   </property>
   <property name="toolTip">
    <string/>
@@ -68,6 +69,9 @@
           <widget class="QRadioButton" name="radioButton">
            <property name="text">
             <string>1月</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
