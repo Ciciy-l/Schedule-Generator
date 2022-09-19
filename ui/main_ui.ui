@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../res/schedule.ico</normaloff>../res/schedule.ico</iconset>
+    <selectedon>../res/schedule.png</selectedon>../res/schedule.png</iconset>
   </property>
   <property name="toolTip">
    <string/>
@@ -181,6 +184,9 @@
         <widget class="QRadioButton" name="radioButton_14">
          <property name="text">
           <string>是</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
