@@ -3,7 +3,7 @@
 # Date:2022/9/16
 
 
-from bin.Generation import generation
+from bin.Generation_cmd import generation
 from bin.Generation_ui import generation_ui
 from src.common import read_config
 

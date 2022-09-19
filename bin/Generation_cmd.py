@@ -35,3 +35,7 @@ def generation():
         else:
             break
     input("排班表已填写完成，按下回车键即可退出")
+
+
+if __name__ == '__main__':
+    generation()

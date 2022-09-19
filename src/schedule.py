@@ -8,6 +8,7 @@ import os
 import requests
 import openpyxl.styles
 from openpyxl import Workbook, load_workbook, worksheet
+from src.common import read_config
 import time
 
 
@@ -18,11 +19,16 @@ class Schedule(object):
         self.year = time.strftime("%Y", time.localtime())
         self.month = month
         self.data_path = os.path.abspath(rf"personal_information\{personal_file_name}.txt")
+
+        if not xlsx_file_name:
+            xlsx_file_name = read_config("default").get("xlsx_filename")
         self.output_xlsx_path = os.path.abspath(f"{xlsx_file_name}.xlsx")
-        if skip == "y":
+
+        if skip == "y" or skip == "是":
             self.skip_holidays = True
-        elif skip == "n":
+        elif skip == "n" or skip == "否":
             self.skip_holidays = False
+
         self.file_exists(self.data_path)
         self.file_exists(self.output_xlsx_path)
 

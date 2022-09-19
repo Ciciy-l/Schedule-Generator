@@ -4,9 +4,14 @@ GUI运行主程序
 import sys
 
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QIcon
 
+from src.common import read_config
 from src.schedule import Schedule
 from ui.main_ui import Ui_MainWindow
+import ctypes
+
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("myappid")
 
 
 class MainUi(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -15,7 +20,9 @@ class MainUi(QtWidgets.QMainWindow, Ui_MainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setFixedSize(self.width(), self.height())
+        self.setWindowIcon(QIcon('../res/schedule.png'))
         self.btn_click()
+        self.ui.lineEdit.setPlaceholderText(read_config("default").get("xlsx_filename"))
 
     def btn_click(self):
         self.ui.pushButton.clicked.connect(self.main_func)
@@ -50,3 +57,7 @@ def generation_ui():
     main_ui = MainUi()
     main_ui.show()  # 显示窗口
     sys.exit(app.exec_())  # 程序循环,等待安全退出
+
+
+if __name__ == '__main__':
+    generation_ui()
