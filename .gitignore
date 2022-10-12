@@ -9,3 +9,6 @@
 # 调试相关文件
 /debug.py
 /personal_information/debug
+
+# Excel临时文件
+~*.xlsx
