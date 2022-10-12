@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>370</width>
-    <height>175</height>
+    <width>393</width>
+    <height>211</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,10 +31,10 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>120</y>
-      <width>181</width>
-      <height>41</height>
+      <x>30</x>
+      <y>170</y>
+      <width>331</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -59,6 +59,9 @@
        <property name="text">
         <string>请选择月份：</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
       </widget>
      </item>
      <item row="1" column="1">
@@ -67,6 +70,9 @@
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
           <widget class="QRadioButton" name="radioButton">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
            <property name="text">
             <string>1月</string>
            </property>
@@ -167,15 +173,15 @@
      <rect>
       <x>140</x>
       <y>10</y>
-      <width>212</width>
-      <height>101</height>
+      <width>231</width>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>是否自动跳过节假日？</string>
+        <string>是否自动跳过国家法定节假日？</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -208,35 +214,38 @@
        <property name="text">
         <string>请输入模板excel文件名（不含拓展名）</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QLineEdit" name="lineEdit"/>
      </item>
      <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>请输入生成excel文件名（不含拓展名）</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_2"/>
+     </item>
+     <item>
       <widget class="QLabel" name="label_4">
        <property name="text">
         <string>请填写信息并在点击按钮后耐心等待</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QProgressBar" name="progressBar">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>180</y>
-      <width>321</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
    </widget>
   </widget>
  </widget>
