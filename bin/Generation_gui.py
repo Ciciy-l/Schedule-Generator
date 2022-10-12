@@ -22,7 +22,8 @@ class MainUi(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setFixedSize(self.width(), self.height())
         self.setWindowIcon(QIcon('../res/schedule.png'))
         self.btn_click()
-        self.ui.lineEdit.setPlaceholderText(read_config("default").get("xlsx_filename"))
+        self.ui.lineEdit.setPlaceholderText(read_config("default").get("xlsx_template_name"))
+        self.ui.lineEdit_2.setPlaceholderText(read_config("default").get("output_xlsx_name"))
 
     def btn_click(self):
         self.ui.pushButton.clicked.connect(self.main_func)
@@ -40,16 +41,19 @@ class MainUi(QtWidgets.QMainWindow, Ui_MainWindow):
             [radioButton.text().split("月")[0] for radioButton in radiobutton_month_list if radioButton.isChecked()][0]
         radiobutton_month_list = [self.ui.radioButton_14, self.ui.radioButton_13]
         skip_holidays = [radioButton.text() for radioButton in radiobutton_month_list if radioButton.isChecked()][0]
-        file = self.ui.lineEdit.text()
-        main_function = Schedule(int(month), personal_file_name="personal", xlsx_file_name=file, skip=skip_holidays)
-        while True:
-            try:
-                main_function.output_xlsx(main_function.creation_date(), main_function.read_personal_information())
-            except PermissionError:
-                self.ui.label_4.setText("Excel文件已被其他应用占用！请关闭占用软件后重试…")
-            else:
-                self.ui.label_4.setText("排班表已填写完成!")
-                break
+        file_template = self.ui.lineEdit.text()
+        file_output = self.ui.lineEdit_2.text()
+
+        try:
+            main_function = Schedule(int(month), personal_file_name="personal", xlsx_template_name=file_template,
+                                     skip=skip_holidays, xlsx_output_name=file_output)
+            main_function.output_xlsx(main_function.creation_date(), main_function.read_personal_information(),
+                                      main_function.read_personal_information("leader"))
+        except PermissionError:
+            self.ui.label_4.setText("Excel文件已被其他应用占用！请关闭文件！")
+        else:
+            self.ui.label_4.setText("排班表已填写完成!")
+
 
 
 def generation_ui():

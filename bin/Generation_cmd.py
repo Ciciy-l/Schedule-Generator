@@ -18,17 +18,19 @@ def generation():
         else:
             break
     while True:
-        file = input("请输入模板excel文件名（不含拓展名）后按下enter：")
+        file_template = input("请输入模板excel文件名（不含拓展名）后按下enter：")
+        file_output = input("请输入生成excel文件名（不含拓展名）后按下enter：")
         try:
-            main_function = Schedule(int(month), personal_file_name="personal", xlsx_file_name=file, skip=skip_holidays)
-        except:
-            pass
+            main_function = Schedule(int(month), personal_file_name="personal", xlsx_template_name=file_template, skip=skip_holidays,xlsx_output_name=file_output)
+        except PermissionError:
+            input("Excel文件已被其他应用占用！请关闭占用软件后按下回车键重试…")
         else:
             break
     print("正在写入Excel，请稍后……")
     while True:
         try:
-            main_function.output_xlsx(main_function.creation_date(), main_function.read_personal_information())
+            main_function.output_xlsx(main_function.creation_date(), main_function.read_personal_information(),
+                                      main_function.read_personal_information("leader"))
         except PermissionError:
             input("Excel文件已被其他应用占用！请关闭占用软件后按下回车键重试…")
             print("正在重试……")
