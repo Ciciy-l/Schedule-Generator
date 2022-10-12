@@ -1,13 +1,16 @@
-# Schedule-Generator V1.7
+# Schedule-Generator V2.0
     Generate shift schedules based on rules.
 
 ## Introduce
 
 - Set up the list of duty personnel.
+- Establish a leadership list.
 - Optional Whether to automatically skip holidays.
 - Customize the prefix.
 - There are two versions: command line and GUI.
 - The configuration file controls the running mode.
+- Generate files based on table templates.
+- Parameterized control of write cells.
 - ...
 
 ## How to operate
@@ -22,10 +25,11 @@
   - Select the month to build.
   - Choose whether to skip holidays.
   - Enter the name of the template file.
+  - Enter a build file name.
   - Click on the button
 
 ## The next version
 
-- Parameterized control of write cells.
 - User-defined generation rules.
 - Optimized the template configuration mode.
+- Optimize actual working day compatibility.
